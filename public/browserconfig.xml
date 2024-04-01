@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/icon.png"/>
+            <square150x150logo src="https://draet.dksindo.com//icon.png"/>
             <TileColor>#da532c</TileColor>
         </tile>
     </msapplication>

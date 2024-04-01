@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-show="$pwa.needRefresh">
+    <div v-show="$pwa.needRefresh" class="flex justify-center py-12">
       <span>
         New content available, click on reload button to update.
       </span>

@@ -2,22 +2,23 @@
 	<div>
 		<!-- Navigation -->
 		<Navigation />
+		<main class="pt-16">
+			<!-- Hero Section -->
+			<Hero v-if="$device.isDesktop" @open-chat="openOrder"/>
 
-		<!-- Hero Section -->
-		<Hero v-if="$device.isDesktop" @open-chat="openOrder"/>
+			<HeroMobile v-if="$device.isMobile" @open-chat="openOrder" />
 
-		<HeroMobile v-if="$device.isMobile" @open-chat="openOrder" />
+			<!-- Profile -->
+			<Profile />
 
-		<!-- Profile -->
-		<Profile />
-		
-		<!-- Kontak section -->
-		<Kontak />
+			<!-- Kontak section -->
+			<Kontak />
 
-		<div v-if="!hideChat" class="fixed bottom-24 right-4">
-			<ChatButton @toggle-popup="togglePopup" />
-			<ChatPopup :isPopupOpen="isPopupOpen" @close-popup="closePopup"/>
-		</div>
+			<div v-if="!hideChat" class="fixed bottom-24 right-4">
+				<ChatButton @toggle-popup="togglePopup" />
+				<ChatPopup :isPopupOpen="isPopupOpen" @close-popup="closePopup"/>
+			</div>
+		</main>
 
 		<!-- Footer -->
 		<Footer />
