@@ -39,7 +39,7 @@
 					<div class="flex justify-start py-2">
 						<div>
 							<h5 class="font-semibold text-gray-700">Mulai Dari</h5>
-							<h4 class="font-semibold text-orange-500">Rp. 1000.00</h4>
+							<h4 class="font-semibold text-orange-500">Rp. 100.000</h4>
 						</div>
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 					<div class="flex justify-start py-2">
 						<div>
 							<h5 class="font-semibold text-gray-600">Mulai Dari</h5>
-							<h4 class="font-semibold text-orange-500">Rp. 1000.00</h4>
+							<h4 class="font-semibold text-orange-500">Rp. 100.000</h4>
 						</div>
 					</div>
 				</div>
