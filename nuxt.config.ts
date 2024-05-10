@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
   server: {
     port: 9019
   },
@@ -76,41 +76,41 @@ export default defineNuxtConfig({
         property: "og:image:height",
         content: "600",
       },
-    ],
+      ],
     link: [
-    ],
+      ],
     script: [
-    ]
+      ]
   },
   css: [
     "@/assets/css/main.css",
     '@fortawesome/fontawesome-svg-core/styles.css'
-  ],
+    ],
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/device',
     'vue3-carousel-nuxt',
     '@vite-pwa/nuxt',
     ['@nuxtjs/google-fonts', {
-        families: {
-          Poppins: true,
-          Montserrat: true,
-          Roboto: true,
-          Inter: [400, 700],
-          'Josefin+Sans': true,
-          Lato: [100, 300],
-          Raleway: {
-            wght: [100, 400],
-            ital: [100]
-          },
-          Inter: '200..700',
-          'Crimson Pro': {
-            wght: '200..900',
-            ital: '200..700',
-          }
+      families: {
+        Poppins: true,
+        Montserrat: true,
+        Roboto: true,
+        Inter: [400, 700],
+        'Josefin+Sans': true,
+        Lato: [100, 300],
+        Raleway: {
+          wght: [100, 400],
+          ital: [100]
+        },
+        Inter: '200..700',
+        'Crimson Pro': {
+          wght: '200..900',
+          ital: '200..700',
         }
+      }
     }]
-  ],
+    ],
   carousel: {
     prefix: 'C'
   },
@@ -145,68 +145,68 @@ export default defineNuxtConfig({
       theme_color: "#000",
       background_color: "#000",
       icons: [
-        {
-          src: "https://draet.dksindo.com/icon-48x48.png",
-          sizes: "48x48",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-72x72.png",
-          sizes: "72x72",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-96x96.png",
-          sizes: "96x96",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-128x128.png",
-          sizes: "128x128",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-144x144.png",
-          sizes: "144x144",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-152x152.png",
-          sizes: "152x152",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-192x192.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-384x384.png",
-          sizes: "384x384",
-          type: "image/png",
-          purpose: "maskable any",
-        },
-        {
-          src: "https://draet.dksindo.com/icon-512x512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable any",
-        },
+      {
+        src: "https://draet.dksindo.com/icon-48x48.png",
+        sizes: "48x48",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-72x72.png",
+        sizes: "72x72",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-128x128.png",
+        sizes: "128x128",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-144x144.png",
+        sizes: "144x144",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-152x152.png",
+        sizes: "152x152",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-384x384.png",
+        sizes: "384x384",
+        type: "image/png",
+        purpose: "maskable any",
+      },
+      {
+        src: "https://draet.dksindo.com/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable any",
+      },
       ],
     },
   },
   buildModules: [
     'nuxt-tailwind-heroicons'
-  ],
-   plugins: [
+    ],
+  plugins: [
     '~/plugins/fontawesome',
     {src: '~/plugins/crisp', mode: 'client', ssr: false}
-  ]
+    ]
 })
