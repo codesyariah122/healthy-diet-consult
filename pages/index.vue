@@ -1,81 +1,86 @@
 <template>
 	<div>
 		<!-- Navigation -->
-		<Navigation />
+		<HealthyDietNavigation />
 		<main class="pt-16">
 			<!-- Hero Section -->
-			<Hero v-if="$device.isDesktop" @open-chat="openOrder"/>
+			<HealthyDietHero v-if="$device.isDesktop" @open-chat="openOrder"/>
 
-			<HeroMobile v-if="$device.isMobile" @open-chat="openOrder" />
+			<HealthyDietHeroMobile v-if="$device.isMobile" @open-chat="openOrder" />
 
 			<!-- Profile -->
-			<Profile />
+			<HealthyDietProfile />
 
 			<!-- Kontak section -->
-			<Kontak />
+			<HealthyDietKontak />
 
 			<div v-if="!hideChat" class="fixed bottom-24 right-4">
-				<ChatButton @toggle-popup="togglePopup" />
-				<ChatPopup :isPopupOpen="isPopupOpen" @close-popup="closePopup"/>
+				<HealthyDietChatButton @toggle-popup="togglePopup" />
+				<HealthyDietChatPopup :isPopupOpen="isPopupOpen" @close-popup="closePopup"/>
 			</div>
 		</main>
 
 		<!-- Footer -->
-		<Footer />
+		<HealthyDietFooter />
 	</div>
 </template>
 
 
-<script>
-	import Navigation from '~/components/HealthyDiet/Navigation';
-	import Hero from '~/components/HealthyDiet/Hero';
-	import HeroMobile from '~/components/HealthyDiet/HeroMobile';
-	import Slider from '~/components/HealthyDiet/Slider';
-	import Profile from '~/components/HealthyDiet/Profile';
-	import ChatButton from '~/components/HealthyDiet/ChatButton';
-	import ChatPopup from '~/components/HealthyDiet/ChatPopup';
-	import Kontak from '~/components/HealthyDiet/Kontak';
-	import Footer from '~/components/HealthyDiet/Footer';
+<script setup>
+	import {ref, onMounted} from 'vue';
 
-	export default{
-		components: {
-			Navigation,
-			Hero,
-			HeroMobile,
-			Slider,
-			Profile,
-			ChatButton,
-			ChatPopup,
-			Kontak,
-			Footer
-		},
-		data() {
-			return {
-				isPopupOpen: false,
-				hideChat: false
+	useHead({
+		title: 'HEALTHY DIET',
+		meta: [
+			{ name: 'description', content: 'Temukan informasi healthy diet dan konsultasikan masalah diet anda dengan Dokter profesional.' },
+			{
+				name: 'og:title', content: 'PUJIERMANTO::PORTFOLIO'
+			},
+			{
+				name: 'description', content: 'Temukan informasi healthy diet dan konsultasikan masalah diet anda dengan Dokter profesional.'
+			},
+			{
+				name: 'og:description', content: 'Temukan informasi healthy diet dan konsultasikan masalah diet anda dengan Dokter profesional.'
+			},
+			{
+				name: 'og:image', content: 'https://draet.dksindo.com/_nuxt/profile2.C4FhqTLC.jpeg'
 			}
-		},
-		mounted(){
-			$crisp.push(['do', 'chat:hide']);
-		},
-		methods: {
-			togglePopup() {
-				this.isPopupOpen = !this.isPopupOpen;
-				this.openOrder();
-			},
-			closePopup() {
-				console.log("clicked")
-				this.isPopupOpen = false;
-			},
+			],
+	});
 
-			openOrder(){
-				setTimeout(() => {
-					this.hideChat = true;
-				}, 1000)
-				$crisp.push(['do', 'chat:show']);
-				$crisp.push(['do', 'chat:open']);
-				console.log("aktif now")
-			}
-		}
+	useSeoMeta({
+		title: 'HEALTHY DIET',
+		ogTitle: 'HEALTHY DIET',
+		description: 'Temukan informasi healthy diet dan konsultasikan masalah diet anda dengan Dokter profesional.',
+		ogDescription: 'Temukan informasi healthy diet dan konsultasikan masalah diet anda dengan Dokter profesional.',
+		ogImage: 'https://draet.dksindo.com/_nuxt/profile2.C4FhqTLC.jpeg',
+		twitterCard: 'summary_large_image',
+	});
+
+	let isPopupOpen = ref(false), hideChat = ref(false);
+
+	onMounted(() => {
+		$crisp.push(['do', 'chat:hide']);
+	})
+
+	function togglePopup() {
+		isPopupOpen.value = !isPopupOpen;
+		openOrder();
 	}
+
+	function closePopup() {
+		console.log("clicked")
+		isPopupOpen.value = false;
+	}
+
+	function openOrder(){
+		setTimeout(() => {
+			hideChat.value = true;
+		}, 1000)
+		$crisp.push(['do', 'chat:show']);
+		$crisp.push(['do', 'chat:open']);
+		console.log("aktif now")
+	}
+
+
 </script>
